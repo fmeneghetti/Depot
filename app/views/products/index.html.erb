@@ -1,0 +1,47 @@
+<h1>Elenco prodotti</h1>
+
+<table cellpadding="5" cellspacing="0">
+<% 
+odd_or_even = 0
+#@products.each do |product|
+for product in @products
+  odd_or_even = 1 - odd_or_even
+%>
+  <tr valign="top" class="ListLine<%= odd_or_even %>">
+    <td>
+      <img src="<%= product.image_url %>" width="60" height="70" />
+    </td>
+    
+    <td width="60%">
+      <span class="ListTitle"><%= h(product.title) %></span>
+      <%= h(truncate(product.body,180)) %>
+    </td>
+
+    <td align="right">
+      05-02-09<br/>
+      <strong>$<%= sprintf("%0.2f", product.price) %></strong>
+    </td>
+
+    <td class="ListActions">
+      <%= link_to 'Dettagli', product %><br/>
+      <%= link_to 'Modifica', edit_product_path(product) %><br/>
+      <%= link_to 'Cancella', product, :confirm => 'Sei sicuro?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= if @pages && @pages.current.previous
+      link_to 'Pagina precedente', { :page => @pages.current.previous }
+    end
+%>
+
+<%= if @pages && @pages.current.next
+      link_to 'Pagina successiva', { :page => @pages.current.next }
+    end
+%>
+
+
+<br />
+
+<%= link_to 'Aggiungi un nuovo prodotto', new_product_path %>
