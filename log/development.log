@@ -1,0 +1,1075 @@
+  [4;36;1mSQL (40.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-29 16:40:54) [GET]
+  [4;35;1mSQL (16.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (30.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 149ms (View: 5, DB: 88) | 200 OK [http://0.0.0.0/rails/info/properties]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20090429144334)
+  [4;35;1mSQL (86.4ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `image_url` varchar(255), `price` decimal, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (32.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090429144334')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `products`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:43:47) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 24ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-04-29 16:43:50) [GET]
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-04-29 16:45:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"images/margherita.png", "price"=>"4.75", "body"=>"Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n\t \r\nCollegato da qui\r\n \r\n \r\n \r\n\t\r\nRicette\r\n \r\n \r\n \r\n\t\r\nUltime dai Blog\r\n \r\n \r\n \r\n\t\r\nIl Web\r\n \r\n \r\n \r\n\t\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l'impasto in panetti da circa 100 grammi l'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.", "title"=>"Pizza margherita"}}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (0.4ms)[0m   [0mINSERT INTO `products` (`image_url`, `updated_at`, `title`, `body`, `price`, `created_at`) VALUES('images/margherita.png', '2009-04-29 14:45:32', 'Pizza margherita', 'Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n	 \r\nCollegato da qui\r\n \r\n \r\n \r\n	\r\nRicette\r\n \r\n \r\n \r\n	\r\nUltime dai Blog\r\n \r\n \r\n \r\n	\r\nIl Web\r\n \r\n \r\n \r\n	\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l\'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l\'impasto in panetti da circa 100 grammi l\'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell\'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.', 4, '2009-04-29 14:45:32')[0m
+  [4;36;1mSQL (33.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/1
+Completed in 126ms (DB: 34) | 302 Found [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 16:45:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (13.8ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 29ms (View: 8, DB: 15) | 200 OK [http://0.0.0.0/products/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2009-04-29 16:45:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/products/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:46:03) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"images/margherita.png", "price"=>"4.75", "body"=>"Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n\t \r\nCollegato da qui\r\n \r\n \r\n \r\n\t\r\nRicette\r\n \r\n \r\n \r\n\t\r\nUltime dai Blog\r\n \r\n \r\n \r\n\t\r\nIl Web\r\n \r\n \r\n \r\n\t\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l'impasto in panetti da circa 100 grammi l'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.", "title"=>"Pizza margherita"}, "id"=>"1"}
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Update (0.2ms)[0m   [0mUPDATE `products` SET `price` = 4.75, `updated_at` = '2009-04-29 14:46:03' WHERE `id` = 1[0m
+  [4;36;1mSQL (57.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/1
+Completed in 71ms (DB: 59) | 302 Found [http://0.0.0.0/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 16:46:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/products/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:46:05) [GET]
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 22ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-04-29 16:46:06) [GET]
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/products/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:48:35) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-04-29 16:48:38) [GET]
+  [4;35;1mProduct Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 27ms (View: 11, DB: 2) | 200 OK [http://0.0.0.0/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-04-29 16:48:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"", "price"=>"", "body"=>"", "title"=>""}}
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 17ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-04-29 16:48:56) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"", "price"=>"", "body"=>"", "title"=>"Pizza prosciutto"}}
+  [4;35;1mProduct Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 33ms (View: 4, DB: 2) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-04-29 16:49:39) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"images/4formaggi.png", "price"=>"ciao", "body"=>"Pizza ai 4 Formaggi, seguitiamo a presentarvi le più classiche ricette per preparare la Pizza, la Pizza ai 4 Formaggi è davvero squisita quindi vi consiglio di provare a prepararla con questa ricetta davvero molto semplice....\r\n\r\nIngredienti:\r\n\r\n1Kg Farina\r\n30 gr Lievito di Birra\r\nOlio d'Oliva\r\nSale\r\nPepe\r\n100 gr di gorgonzola dolce\r\n100 gr di provolone piccante\r\n100 gr di provola affumicata\r\n100 gr di mozzarella fior di latte\r\nParmigiano Reggiano\r\n\r\nPreparazione Pizza ai 4 Formaggi:\r\n\r\nPrepariamo innanzitutto l'impasto, quindi mettiamo su un piano la farina a fontana, sciogliamo il lievito di birra in un bicchiere di acqua calda e aggiungiamo alla farina, impastiamo e aggiungiamo anche un pizzico di sale e un filo d'olio d'oliva, impastate energicamente e a seconda della necessità aggiungete o un po' di farina o dell'acqua, affinchè la pasta venga omogenea ed elastica, a questo punto mettete la pasta a lievitare per almeno 2 ore coperta da un panno umido.\r\nA questo punto ungete con dell' olio d'oliva una teglia da forno stendete la pasta cercando di dare un'altezza di circa 1 centimetro alla pasta.\r\nA questo punto ridurre in dadini i formaggi, quindi condire con un filo d'olio la pizza, aggiungete un pizzico di sale e di pepe ed infine cospargete la pizza con i formaggi.\r\nOra infornate la pizza a 250° per 15 minuti, tirate fuori la pizza cospargete con Parmigiano Reggiano e infornare di nuovo per altri 5 minuti, la Pizza ai 4 Formaggi è pronta buon appetito!!!\r\n", "title"=>"Pizza ai 4 Formaggi "}}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 63ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2009-04-29 16:49:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"images/4formaggi.png", "price"=>"5.50", "body"=>"Pizza ai 4 Formaggi, seguitiamo a presentarvi le più classiche ricette per preparare la Pizza, la Pizza ai 4 Formaggi è davvero squisita quindi vi consiglio di provare a prepararla con questa ricetta davvero molto semplice....\r\n\r\nIngredienti:\r\n\r\n1Kg Farina\r\n30 gr Lievito di Birra\r\nOlio d'Oliva\r\nSale\r\nPepe\r\n100 gr di gorgonzola dolce\r\n100 gr di provolone piccante\r\n100 gr di provola affumicata\r\n100 gr di mozzarella fior di latte\r\nParmigiano Reggiano\r\n\r\nPreparazione Pizza ai 4 Formaggi:\r\n\r\nPrepariamo innanzitutto l'impasto, quindi mettiamo su un piano la farina a fontana, sciogliamo il lievito di birra in un bicchiere di acqua calda e aggiungiamo alla farina, impastiamo e aggiungiamo anche un pizzico di sale e un filo d'olio d'oliva, impastate energicamente e a seconda della necessità aggiungete o un po' di farina o dell'acqua, affinchè la pasta venga omogenea ed elastica, a questo punto mettete la pasta a lievitare per almeno 2 ore coperta da un panno umido.\r\nA questo punto ungete con dell' olio d'oliva una teglia da forno stendete la pasta cercando di dare un'altezza di circa 1 centimetro alla pasta.\r\nA questo punto ridurre in dadini i formaggi, quindi condire con un filo d'olio la pizza, aggiungete un pizzico di sale e di pepe ed infine cospargete la pizza con i formaggi.\r\nOra infornate la pizza a 250° per 15 minuti, tirate fuori la pizza cospargete con Parmigiano Reggiano e infornare di nuovo per altri 5 minuti, la Pizza ai 4 Formaggi è pronta buon appetito!!!\r\n", "title"=>"Pizza ai 4 Formaggi "}}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Create (0.3ms)[0m   [0mINSERT INTO `products` (`image_url`, `updated_at`, `title`, `body`, `price`, `created_at`) VALUES('images/4formaggi.png', '2009-04-29 14:49:44', 'Pizza ai 4 Formaggi ', 'Pizza ai 4 Formaggi, seguitiamo a presentarvi le più classiche ricette per preparare la Pizza, la Pizza ai 4 Formaggi è davvero squisita quindi vi consiglio di provare a prepararla con questa ricetta davvero molto semplice....\r\n\r\nIngredienti:\r\n\r\n1Kg Farina\r\n30 gr Lievito di Birra\r\nOlio d\'Oliva\r\nSale\r\nPepe\r\n100 gr di gorgonzola dolce\r\n100 gr di provolone piccante\r\n100 gr di provola affumicata\r\n100 gr di mozzarella fior di latte\r\nParmigiano Reggiano\r\n\r\nPreparazione Pizza ai 4 Formaggi:\r\n\r\nPrepariamo innanzitutto l\'impasto, quindi mettiamo su un piano la farina a fontana, sciogliamo il lievito di birra in un bicchiere di acqua calda e aggiungiamo alla farina, impastiamo e aggiungiamo anche un pizzico di sale e un filo d\'olio d\'oliva, impastate energicamente e a seconda della necessità aggiungete o un po\' di farina o dell\'acqua, affinchè la pasta venga omogenea ed elastica, a questo punto mettete la pasta a lievitare per almeno 2 ore coperta da un panno umido.\r\nA questo punto ungete con dell\' olio d\'oliva una teglia da forno stendete la pasta cercando di dare un\'altezza di circa 1 centimetro alla pasta.\r\nA questo punto ridurre in dadini i formaggi, quindi condire con un filo d\'olio la pizza, aggiungete un pizzico di sale e di pepe ed infine cospargete la pizza con i formaggi.\r\nOra infornate la pizza a 250° per 15 minuti, tirate fuori la pizza cospargete con Parmigiano Reggiano e infornare di nuovo per altri 5 minuti, la Pizza ai 4 Formaggi è pronta buon appetito!!!\r\n', 5.5, '2009-04-29 14:49:44')[0m
+  [4;36;1mSQL (68.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/2
+Completed in 81ms (DB: 69) | 302 Found [http://0.0.0.0/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 16:49:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/products/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2009-04-29 16:52:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSQL (12.8ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+
+NoMethodError (undefined method `validate_uniqueness_of' for #<Class:0x7f9a6b2618a0>):
+  app/models/product.rb:4
+  app/controllers/products_controller.rb:37:in `edit'
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2009-04-29 16:53:10) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/products/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:53:13) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"images/4formaggi.png", "price"=>"5.50", "body"=>"Pizza ai 4 Formaggi, seguitiamo a presentarvi le più classiche ricette per preparare la Pizza, la Pizza ai 4 Formaggi è davvero squisita quindi vi consiglio di provare a prepararla con questa ricetta davvero molto semplice....\r\n\r\nIngredienti:\r\n\r\n1Kg Farina\r\n30 gr Lievito di Birra\r\nOlio d'Oliva\r\nSale\r\nPepe\r\n100 gr di gorgonzola dolce\r\n100 gr di provolone piccante\r\n100 gr di provola affumicata\r\n100 gr di mozzarella fior di latte\r\nParmigiano Reggiano\r\n\r\nPreparazione Pizza ai 4 Formaggi:\r\n\r\nPrepariamo innanzitutto l'impasto, quindi mettiamo su un piano la farina a fontana, sciogliamo il lievito di birra in un bicchiere di acqua calda e aggiungiamo alla farina, impastiamo e aggiungiamo anche un pizzico di sale e un filo d'olio d'oliva, impastate energicamente e a seconda della necessità aggiungete o un po' di farina o dell'acqua, affinchè la pasta venga omogenea ed elastica, a questo punto mettete la pasta a lievitare per almeno 2 ore coperta da un panno umido.\r\nA questo punto ungete con dell' olio d'oliva una teglia da forno stendete la pasta cercando di dare un'altezza di circa 1 centimetro alla pasta.\r\nA questo punto ridurre in dadini i formaggi, quindi condire con un filo d'olio la pizza, aggiungete un pizzico di sale e di pepe ed infine cospargete la pizza con i formaggi.\r\nOra infornate la pizza a 250° per 15 minuti, tirate fuori la pizza cospargete con Parmigiano Reggiano e infornare di nuovo per altri 5 minuti, la Pizza ai 4 Formaggi è pronta buon appetito!!!\r\n", "title"=>"Pizza ai 4 Formaggi "}, "id"=>"2"}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Exists (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pizza ai 4 Formaggi ' AND `products`.id <> 2) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 71ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/products/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:53:35) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"http://1.bp.blogspot.com/_w44aDfYZRss/SWmrnkj7cwI/AAAAAAAABzY/abq-VHEky1c/s400/A.jpg", "price"=>"5.50", "body"=>"Pizza ai 4 Formaggi, seguitiamo a presentarvi le più classiche ricette per preparare la Pizza, la Pizza ai 4 Formaggi è davvero squisita quindi vi consiglio di provare a prepararla con questa ricetta davvero molto semplice....\r\n\r\nIngredienti:\r\n\r\n1Kg Farina\r\n30 gr Lievito di Birra\r\nOlio d'Oliva\r\nSale\r\nPepe\r\n100 gr di gorgonzola dolce\r\n100 gr di provolone piccante\r\n100 gr di provola affumicata\r\n100 gr di mozzarella fior di latte\r\nParmigiano Reggiano\r\n\r\nPreparazione Pizza ai 4 Formaggi:\r\n\r\nPrepariamo innanzitutto l'impasto, quindi mettiamo su un piano la farina a fontana, sciogliamo il lievito di birra in un bicchiere di acqua calda e aggiungiamo alla farina, impastiamo e aggiungiamo anche un pizzico di sale e un filo d'olio d'oliva, impastate energicamente e a seconda della necessità aggiungete o un po' di farina o dell'acqua, affinchè la pasta venga omogenea ed elastica, a questo punto mettete la pasta a lievitare per almeno 2 ore coperta da un panno umido.\r\nA questo punto ungete con dell' olio d'oliva una teglia da forno stendete la pasta cercando di dare un'altezza di circa 1 centimetro alla pasta.\r\nA questo punto ridurre in dadini i formaggi, quindi condire con un filo d'olio la pizza, aggiungete un pizzico di sale e di pepe ed infine cospargete la pizza con i formaggi.\r\nOra infornate la pizza a 250° per 15 minuti, tirate fuori la pizza cospargete con Parmigiano Reggiano e infornare di nuovo per altri 5 minuti, la Pizza ai 4 Formaggi è pronta buon appetito!!!\r\n", "title"=>"Pizza ai 4 Formaggi "}, "id"=>"2"}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Exists (0.2ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pizza ai 4 Formaggi ' AND `products`.id <> 2) LIMIT 1[0m
+  [4;35;1mProduct Update (0.2ms)[0m   [0mUPDATE `products` SET `updated_at` = '2009-04-29 14:53:35', `image_url` = 'http://1.bp.blogspot.com/_w44aDfYZRss/SWmrnkj7cwI/AAAAAAAABzY/abq-VHEky1c/s400/A.jpg' WHERE `id` = 2[0m
+  [4;36;1mSQL (61.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/2
+Completed in 76ms (DB: 63) | 302 Found [http://0.0.0.0/products/2]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 16:53:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/products/2]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:53:38) [GET]
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2009-04-29 16:53:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/products/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:53:56) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"http://2.bp.blogspot.com/_w44aDfYZRss/SM-sMvnWDwI/AAAAAAAAAW8/wT3lhiRnsNY/s400/pizzaok.jpg", "price"=>"4.75", "body"=>"Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n\t \r\nCollegato da qui\r\n \r\n \r\n \r\n\t\r\nRicette\r\n \r\n \r\n \r\n\t\r\nUltime dai Blog\r\n \r\n \r\n \r\n\t\r\nIl Web\r\n \r\n \r\n \r\n\t\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l'impasto in panetti da circa 100 grammi l'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.", "title"=>"Pizza margherita"}, "id"=>"1"}
+  [4;35;1mProduct Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Exists (0.3ms)[0m   [0;1mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pizza margherita' AND `products`.id <> 1) LIMIT 1[0m
+  [4;35;1mProduct Update (0.2ms)[0m   [0mUPDATE `products` SET `updated_at` = '2009-04-29 14:53:56', `image_url` = 'http://2.bp.blogspot.com/_w44aDfYZRss/SM-sMvnWDwI/AAAAAAAAAW8/wT3lhiRnsNY/s400/pizzaok.jpg' WHERE `id` = 1[0m
+  [4;36;1mSQL (66.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/1
+Completed in 83ms (DB: 68) | 302 Found [http://0.0.0.0/products/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 16:53:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/products/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:53:58) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 20ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:56:10) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 84ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2009-04-29 16:56:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (7.9ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 19ms (View: 5, DB: 9) | 200 OK [http://0.0.0.0/products/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:56:17) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"http://2.bp.blogspot.com/_w44aDfYZRss/SM-sMvnWDwI/AAAAAAAAAW8/wT3lhiRnsNY/s400/pizzaok.jpg", "price"=>"", "body"=>"Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n\t \r\nCollegato da qui\r\n \r\n \r\n \r\n\t\r\nRicette\r\n \r\n \r\n \r\n\t\r\nUltime dai Blog\r\n \r\n \r\n \r\n\t\r\nIl Web\r\n \r\n \r\n \r\n\t\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l'impasto in panetti da circa 100 grammi l'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.", "title"=>"Pizza margherita"}, "id"=>"1"}
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Exists (0.3ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pizza margherita' AND `products`.id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 18ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:56:24) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"http://2.bp.blogspot.com/_w44aDfYZRss/SM-sMvnWDwI/AAAAAAAAAW8/wT3lhiRnsNY/s400/pizzaok.jpg", "price"=>"-8", "body"=>"Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n\t \r\nCollegato da qui\r\n \r\n \r\n \r\n\t\r\nRicette\r\n \r\n \r\n \r\n\t\r\nUltime dai Blog\r\n \r\n \r\n \r\n\t\r\nIl Web\r\n \r\n \r\n \r\n\t\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l'impasto in panetti da circa 100 grammi l'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.", "title"=>"Pizza margherita"}, "id"=>"1"}
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Exists (0.2ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pizza margherita' AND `products`.id <> 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2009-04-29 16:56:33) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"lFbwCokRbxYX3avhLVt5WjA+d7xkrzromThELDzCWUg=", "product"=>{"image_url"=>"http://2.bp.blogspot.com/_w44aDfYZRss/SM-sMvnWDwI/AAAAAAAAAW8/wT3lhiRnsNY/s400/pizzaok.jpg", "price"=>"4.50", "body"=>"Questo blog\r\nCollegato da qui\r\nRicette\r\nUltime dai Blog\r\nIl Web\r\nQuesto blog\r\n \r\n \r\n \r\n\t \r\nCollegato da qui\r\n \r\n \r\n \r\n\t\r\nRicette\r\n \r\n \r\n \r\n\t\r\nUltime dai Blog\r\n \r\n \r\n \r\n\t\r\nIl Web\r\n \r\n \r\n \r\n\t\r\n \r\nmartedì 16 settembre 2008\r\nPizza Margherita - La Regina delle Pizze\r\n\r\nLa più classica delle pizze ,la più popolare,in poche parole la sovrana delle pizze,sarà per questo che prende il nome da una Regina? Cucinarla è davvero semplice ,ecco la ricetta della pizza margherita:\r\n\r\nIngredienti Pizza Margherita:\r\n\r\n1 kg farina\r\nOlio extra vergine di oliva\r\nsale q.b\r\n40 gr lievito di birra\r\n500 gr mozzarella\r\n250 gr pomodori pelati\r\nacqua calda q.b.\r\nLatte mezzo bicchiere\r\nzucchero q.b.\r\n\r\n\r\nProcedimento:\r\n\r\nSciogliere il lievito di birra un un recipiente abbasanza grande con\r\n. l'acqua calda e dopo aggiungere il latte,poi la farina il sale e un pizzico di zucchero e mescolare bene fino ad ottenere una pasta morbida ma solida ,aggiungendo in cao altra acqua o farina.\r\nCoprire il recipiente con un panno umido e lasciare riposare per qualche ora in un posto caldo finchè non sarà ben lievitato. A questo punto tagliare l'impasto in panetti da circa 100 grammi l'uno e stenderli con il mattarello per dargli la tipica forma rotonda della pizza cercando di ottenere uno spessore sottile aiutandovi con il palmo della mano.\r\nUngete il fondo di una teglia con dell'olio di oliva e poneteci le forme di pasta,spalmate sopra della passata di pomooro a cui avrete aggiunto del sale e la mozzarella tagliata a pezzetti.\r\nLasciare cuocere in forno a 200 gradi, una volta cotta aggiungere delle fogliette di basilico (facoltativo) e servite calda.", "title"=>"Pizza margherita"}, "id"=>"1"}
+  [4;36;1mProduct Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Exists (0.3ms)[0m   [0mSELECT `products`.id FROM `products` WHERE (`products`.`title` = BINARY 'Pizza margherita' AND `products`.id <> 1) LIMIT 1[0m
+  [4;36;1mProduct Update (0.2ms)[0m   [0;1mUPDATE `products` SET `price` = 4.5, `updated_at` = '2009-04-29 14:56:33' WHERE `id` = 1[0m
+  [4;35;1mSQL (71.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/products/1
+Completed in 89ms (DB: 74) | 302 Found [http://0.0.0.0/products/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 16:56:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/products/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 16:56:36) [GET]
+  [4;36;1mProduct Load (0.6ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Completed in 31ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:14:45) [GET]
+  [4;35;1mProduct Load (8.0ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+
+ActionView::TemplateError (wrong number of arguments (2 for 1)) on line #16 of app/views/products/index.html.erb:
+13:     
+14:     <td width="60%">
+15:       <span class="ListTitle"><%= h(product.title) %></span>
+16:       <%= h(truncate(product.body),80) %>
+17:     </td>
+18: 
+19:     <td align="right">
+
+    app/views/products/index.html.erb:16:in `h'
+    app/views/products/index.html.erb:16
+    app/views/products/index.html.erb:6:in `each'
+    app/views/products/index.html.erb:6
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (50.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:15:37) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:16)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:16)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #33 of app/views/products/index.html.erb:
+30: <% end %>
+31: </table>
+32: 
+33: <%= if @product_pages.current.previous
+34:       link_to 'Pagina precedente', { :page => @product_pages.current.previous }
+35:     end
+36: %>
+
+    app/views/products/index.html.erb:33
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (110.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:17:00) [GET]
+  [4;35;1mProduct Load (0.6ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @product_pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @product_pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (48.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:17:02) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (22.2ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @product_pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @product_pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (49.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:17:02) [GET]
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @product_pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @product_pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (107.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:17) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (62.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:23) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:23) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (111.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:24) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (48.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:24) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (51.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:24) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (109.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:24) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (48.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:24) [GET]
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (128.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:24) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (110.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:25) [GET]
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (59.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:25) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (125.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:25) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (50.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:25) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:18:25) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #34 of app/views/products/index.html.erb:
+31: <% end %>
+32: </table>
+33: 
+34: <%= if @pages.current.previous
+35:       link_to 'Pagina precedente', { :page => @pages.current.previous }
+36:     end
+37: %>
+
+    app/views/products/index.html.erb:34
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (113.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:20:14) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.current) on line #39 of app/views/products/index.html.erb:
+36:     end
+37: %>
+38: 
+39: <%= if @product_pages.current.next
+40:       link_to 'Pagina successiva', { :page => @product_pages.current.next }
+41:     end
+42: %>
+
+    app/views/products/index.html.erb:39
+    app/controllers/products_controller.rb:7:in `index'
+
+Rendered rescues/_trace (48.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:20:49) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:21:37) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:22:08) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:22:27) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:22:51) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:22:52) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:23:55) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:24:20) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:24:33) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:24:43) [GET]
+  [4;36;1mProduct Load (0.9ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 16ms (View: 9, DB: 2) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-04-29 17:24:53) [GET]
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/products/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:24:56) [GET]
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2009-04-29 17:25:26) [GET]
+  [4;36;1mProduct Load (0.3ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47products47index46html46erb at /home/fabio/Pubblici/projects/Depot/app/views/products/index.html.erb:17)
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/products]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2009-04-29 17:25:27) [GET]
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/products
+Rendering products/new
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/products/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2009-04-29 17:25:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/products/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2009-04-29 17:25:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/products/1/edit]
